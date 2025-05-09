@@ -1,7 +1,7 @@
 import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { getNotes, addNote } from './handlers/notes.js';
+import { getNotes, addNote, deleteNote, updateNote } from './handlers/notes.js';
 import { getNoteById } from './handlers/getNoteById.js';
 
 const app = express();
@@ -16,6 +16,8 @@ app.use(express.static(path.join(__dirname, 'static')));
 app.get('/notes', getNotes);
 app.get('/notes/:id', getNoteById);
 app.post('/notes/add', addNote);
+app.delete('/notes/delete/:id', deleteNote);
+app.post('/notes/update', updateNote);
 
 
 app.listen(3000, () => {

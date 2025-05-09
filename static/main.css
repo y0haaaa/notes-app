@@ -29,6 +29,7 @@ body{
     position: relative;
 }
 .section-2{
+    position: relative;
     background-color: #ffff;
     padding: 10px;
     display: flex;
@@ -74,6 +75,8 @@ body{
     display: flex;
     flex-direction: column;
     gap: 10px;
+    height: calc(100vh - 150px);
+    overflow-y: scroll;
 }
 .note-item{
     display: grid;
@@ -133,7 +136,7 @@ body{
 .note-description-edit {
     color: black;
     font-size: 1rem;
-    height: calc(100vh - 100px);
+    height: calc(100vh - 150px);
     width: 100%;
     padding: 10px;
   
@@ -145,3 +148,26 @@ body{
     text-align: left;          /* по горизонтали влево */
     vertical-align: top;       /* для совместимости */
   }
+
+.note-save{
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    padding: 10px;
+    width: 350px;
+    height: 70px;
+    
+    transition: transform ease-in-out 300ms;
+
+}
+.note-save > button{
+    border: none;
+    background-color: #ac93da;
+    color: white;
+    font-size: 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    
+}
