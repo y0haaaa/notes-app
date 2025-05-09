@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wdth,wght@0,75..100,100..900;1,75..100,100..900&display=swap');
 
+:root{
+    --main-color: #5e69ee;
+    --main2-color: #4048a4;
+    --second-color: #F4F4FB;
+    --accent-color: #39AFEA;
+}
+
 *{
     padding: 0;
     margin: 0;
@@ -24,7 +31,7 @@ body{
 
 }
 .section-1{
-    background-color: #8bd7d5;
+    background-color: var(--main-color);
     padding: 10px;
     position: relative;
 }
@@ -51,8 +58,8 @@ body{
 }
 .note-add > button{
     border: none;
-    background-color: #ac93da;
-    color: white;
+    background-color: var(--accent-color);
+    color: #ffff;
     font-size: 1rem;
     border-radius: 10px;
     cursor: pointer;
@@ -65,10 +72,10 @@ body{
 }
 
 .note-list-caption{
-    color: #ffff;
+    color: var(--second-color);
     font-size: 1.5rem;
     font-weight: 800;
-    margin: 20px 0 20px 0;
+    margin: 0px 0 20px 0;
 }
 
 .notes-list{
@@ -79,39 +86,43 @@ body{
     overflow-y: scroll;
 }
 .note-item{
+    min-height: 75px;
+    max-height: 100px;
     display: grid;
     grid-template-areas:
     "caption delete"
     "description delete";
-    grid-template-columns: 4fr 1fr;
+    grid-template-columns: 6fr 1fr;
     padding: 10px;
-    gap: 10px;
-    background-color: #d78bd2;
+    background-color: var(--main2-color);
     border-radius: 10px;
     transition: transform ease-in-out 300ms;
     cursor: pointer;
+    overflow: hidden;
 
 }
 .note-caption{
     grid-area: caption;
-    font-size: 1.2rem;
-    font-weight: 600;
+    font-size: 1rem;
+    font-weight: 500;
     color: white;
 }
 .note-description{
     grid-area: description;
-    font-size: 0.9rem;
+    margin-top: 5px;
+    font-size: 0.6rem;
+    width: 100%;
     color: rgba(255, 255, 255, 0.8);
+    overflow: hidden;
 }
 .note-delete{
     grid-area: delete;
     justify-self: end; 
     align-self: center;
+    height: 16px;
+    width: 16px;
 }
-.note-delete{
-    height: 20px;
-    width: 20px;
-}
+    
 .note-item:hover{
     transform: scale(102%);
 }
@@ -162,7 +173,7 @@ body{
 }
 .note-save > button{
     border: none;
-    background-color: #ac93da;
+    background-color: var(--accent-color);
     color: white;
     font-size: 1rem;
     border-radius: 10px;
